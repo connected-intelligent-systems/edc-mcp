@@ -20,7 +20,7 @@ async def lifespan(_app):
     yield
 
 
-mcp = FastMCP("edc", log_level="debug", lifespan=lifespan)
+mcp = FastMCP("edc", lifespan=lifespan)
 mcp.add_middleware(LoggingMiddleware(
     include_payloads=True,
     max_payload_length=1000
